@@ -131,11 +131,10 @@ h2{
 
 .partners{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,180px));
+  grid-template-columns:repeat(auto-fit, 180px);
   gap:30px;
-  justify-content:center;   /* центрирование всей сетки */
-  justify-items:center;     /* центрирование карточек */
-  margin-top:40px;
+  justify-content:center;   /* центрирует ВСЮ сетку */
+  justify-items:center;     /* центрирует карточки */
 }
 
 .partner-card{
@@ -147,10 +146,8 @@ h2{
   justify-content:center;
   align-items:center;
   height:120px;
-  transition:.3s;
-  border:1px solid rgba(7,142,176,0.2);
 }
-
+  
 .partner-card:hover{
   border-color:var(--primary);
   box-shadow:0 0 20px rgba(7,142,176,0.4);
@@ -305,4 +302,5 @@ faders.forEach(el=>observer.observe(el));
 </body>
 
 </html>
+
 
