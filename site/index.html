@@ -133,8 +133,8 @@ h2{
   display:grid;
   grid-template-columns:repeat(auto-fit, 180px);
   gap:30px;
-  justify-content:center;   /* центрирует ВСЮ сетку */
-  justify-items:center;     /* центрирует карточки */
+  justify-content:center;
+  justify-items:center;
 }
 
 .partner-card{
@@ -147,7 +147,7 @@ h2{
   align-items:center;
   height:120px;
 }
-  
+
 .partner-card:hover{
   border-color:var(--primary);
   box-shadow:0 0 20px rgba(7,142,176,0.4);
@@ -190,6 +190,62 @@ footer{
   opacity:1;
   transform:translateY(0);
 }
+
+/* --- АДАПТИВНОСТЬ --- */
+
+/* Планшеты и небольшие экраны */
+@media (max-width: 1024px) {
+  header { padding: 15px 30px; }
+  .hero h1 { font-size: 42px; }
+  .hero p { max-width: 90%; }
+  .btn { padding: 12px 28px; }
+  section { padding: 90px 30px; }
+  h2 { font-size: 32px; margin-bottom: 40px; }
+}
+
+/* Смартфоны 768px */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+  header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  .hero h1 { font-size: 32px; }
+  .hero p { font-size: 16px; }
+  section { padding: 70px 20px; }
+  h2 { font-size: 28px; margin-bottom: 30px; }
+  .cards { gap: 25px; }
+  .card { padding: 25px; }
+  .partners {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+  }
+  .partner-card { width: 140px; height: 100px; padding: 20px; }
+  .partner-card img { max-width: 100px; max-height: 50px; }
+}
+
+/* Смартфоны 480px */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 26px; }
+  .hero p { font-size: 14px; }
+  .btn { padding: 10px 20px; font-size: 14px; }
+  section { padding: 50px 15px; }
+  h2 { font-size: 24px; margin-bottom: 25px; }
+  .cards { grid-template-columns: 1fr; gap: 20px; }
+  .partner-card { width: 120px; height: 90px; padding: 15px; }
+  .partner-card img { max-width: 90px; max-height: 40px; }
+}
+.site-label{
+  font-size:25px;
+  font-weight:700;
+  letter-spacing:0.5px;
+}
 </style>
 </head>
 
@@ -199,7 +255,7 @@ footer{
   <div><strong style="color:var(--primary-bright)">ГранИТ-Урал</strong></div>
   <nav>
     <a href="#about">О компании</a>
-    <a href="#services">Услуги</a>
+    <a href="#services">Направления</a>
     <a href="#partners">Партнёры</a>
     <a href="#contact">Контакты</a>
   </nav>
@@ -258,11 +314,10 @@ footer{
       <div class="partner-card"><img src="images/9.png" loading="lazy" decoding="async" width="120" height="60"></div>
       <div class="partner-card"><img src="images/10.png" loading="lazy" decoding="async" width="120" height="60"></div>
       <div class="partner-card"><img src="images/11.png" loading="lazy" decoding="async" width="120" height="60"></div>
-      <div class="partner-card"><img src="images/12.png" loading="lazy" decoding="async" width="120" height="60"></div>
+      <div class="partner-card"><img src="images/12.jpg" loading="lazy" decoding="async" width="120" height="60"></div>
       <div class="partner-card"><img src="images/13.png" loading="lazy" decoding="async" width="120" height="60"></div>
       <div class="partner-card"><img src="images/14.png" loading="lazy" decoding="async" width="120" height="60"></div>
-      <div class="partner-card"><img src="images/15.png" loading="lazy" decoding="async" width="120" height="60"></div>
-      
+      <div class="partner-card"><img src="images/15.jpg" loading="lazy" decoding="async" width="120" height="60"></div>
     </div>
   </div>
 </section>
@@ -273,14 +328,16 @@ footer{
     <p>Екатеринбург, ул. Софьи Ковалевской 3, оф. 106</p>
     <p>+7 343 288 73 21 | +7 912 24 43 202</p>
     <p>info@tablet66.ru</p>
-
+    <p>
+    <span class="site-label">Официальный сайт:
+    <a href="https://tablet66.ru/" target="_blank" style="color:var(--primary-bright); font-weight:600;">
+      tablet66.ru
+      </span> 
+      </a>
+    </p>
     <div class="map-container">
-      <iframe
-      src="https://yandex.ru/map-widget/v1/?um=constructor%3A7f5e0d8f4e7b3c5f0e4c2d1a9b8f7c6d&amp;source=constructor"
-      width="100%"
-      height="400"
-      frameborder="0">
-    </iframe>
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A015d5ba06cb8ed08c04f53f4cb07ae75689c6f72f5f699c86ef7a98ccb6b2963&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
+
     </div>
 
   </div>
@@ -313,10 +370,4 @@ faders.forEach(el=>observer.observe(el));
 </script>
 
 </body>
-
 </html>
-
-
-
-
-
